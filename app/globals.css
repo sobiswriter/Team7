@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 40% 8%;
+    --foreground: 0 0% 94%;
+    --card: 220 40% 10%;
+    --card-foreground: 0 0% 94%;
+    --popover: 220 40% 8%;
+    --popover-foreground: 0 0% 94%;
+    --primary: 213 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 40% 15%;
+    --secondary-foreground: 0 0% 80%;
+    --muted: 220 40% 12%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 120 100% 55%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 40% 18%;
+    --input: 220 40% 18%;
+    --ring: 213 100% 50%;
+    --radius: 0.5rem;
+    
+    /* Custom Team7 Colors */
+    --team7-blue: 213 100% 50%;
+    --team7-green: 120 100% 55%;
+    --team7-magenta: 325 100% 50%;
+    --team7-dark-bg: 220 40% 8%;
+    --team7-card-bg: 220 40% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#1a1a2e] text-[#F0F0F0];
+  }
+  
+  .terminal-text {
+    @apply font-mono;
+  }
+
+  .bg-hero-pattern {
+    background-image: radial-gradient(circle at 25% 25%, hsl(var(--team7-blue) / 0.2) 0%, transparent 50%), 
+                      radial-gradient(circle at 75% 75%, hsl(var(--team7-magenta) / 0.2) 0%, transparent 50%);
+  }
+  
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .bg-card-pattern {
+    background-image: linear-gradient(45deg, transparent 40%, hsl(var(--team7-blue) / 0.05) 60%);
+  }
+}
+
+/* Custom Keyframe Animations */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(66, 153, 225, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Animation Classes */
+@layer utilities {
+  .animate-gradient-x {
+    animation: gradient-x 6s ease infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 200% 100%;
+  }
+}
+
+@layer components {
+  .team7-gradient {
+    background: linear-gradient(135deg, hsl(var(--team7-blue)) 0%, hsl(var(--team7-magenta)) 100%);
+  }
+  
+  .team7-glow {
+    box-shadow: 0 0 20px hsla(var(--team7-blue), 0.3);
+  }
+  
+  .terminal-text {
+    font-family: var(--font-fira-code);
+    color: hsl(var(--team7-green));
+  }
+  
+  .glass-effect {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--team7-dark-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--team7-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--team7-magenta));
+}
