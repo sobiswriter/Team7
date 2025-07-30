@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Code, Users, Zap, Terminal, Github, ExternalLink } from 'lucide-react';
 
@@ -31,7 +31,7 @@ const stats = [
 ];
 
 export default function Hero() {
-  const { user, loading } = useAuth();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced Animated Background */}
@@ -104,9 +104,10 @@ export default function Hero() {
 
           {/* Enhanced Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            {!loading && !user && (
+            
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-team7-blue to-team7-magenta rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300 animate-pulse"></div>
+                <a href="https://forms.gle/D48UnxdF2vBzVxb3A" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg" 
                   className="relative bg-gradient-to-r from-team7-blue to-team7-magenta hover:from-team7-magenta hover:to-team7-blue text-white px-8 py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-team7-blue/50 group"
@@ -117,12 +118,13 @@ export default function Hero() {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Button>
+              </a>
               </div>
             )}
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-team7-green to-team7-blue rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
               <a 
-                href="https://github.com/shreyanshtripathi-01" 
+                href="https://github.com/sobiswriter" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center"

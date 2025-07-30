@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Terminal, Users, Folder, Calendar, BookOpen, Trophy } from 'lucide-react';
-import AuthButtons from '@/components/auth/AuthButtons';
+
 import Image from 'next/image';
 import logo7 from '@/logo_7.jpg';
 
@@ -66,7 +66,7 @@ export default function Header() {
           </div>
 
           {/* CTA Area */}
-          <AuthButtons className="hidden md:flex items-center space-x-4" />
+          
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -100,11 +100,7 @@ export default function Header() {
                 );
               })}
               <div className="pt-4 border-t border-white/10">
-                <AuthButtons 
-                  className="space-y-3" 
-                  mobile={true} 
-                  onMobileClose={() => setIsMenuOpen(false)} 
-                />
+                
               </div>
             </div>
           </div>

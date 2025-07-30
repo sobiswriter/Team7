@@ -1,12 +1,12 @@
 "use client";
 import React from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { ShieldCheck } from 'lucide-react';
 
 export default function AdminMembersPage() {
-  const { user, loading } = useAuth();
+  
   const router = useRouter();
 
   const admins = [
@@ -17,11 +17,7 @@ export default function AdminMembersPage() {
     // Add more demo admins here if desired
   ];
 
-  if (!loading && (!user || user.role !== 'admin')) {
-    router.push('/');
-    return null;
-  }
-  if (loading) return null;
+  
 
   return (
     <div className="min-h-screen pt-24 px-4 bg-team7-darkBg text-white">

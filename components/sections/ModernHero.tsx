@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Code, Sparkles, Terminal, Github, ExternalLink, Play } from 'lucide-react';
 
 export default function ModernHero() {
-  const { user, loading } = useAuth();
+  
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -100,13 +100,13 @@ export default function ModernHero() {
 
           {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            {!loading && !user && (
+            
               <Button
                 asChild
                 size="lg"
                 className="relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 group overflow-hidden"
               >
-                <a href="/join">
+                <a href="https://forms.gle/D48UnxdF2vBzVxb3A" target="_blank" rel="noopener noreferrer">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative flex items-center">
                     <Sparkles className="mr-2 w-5 h-5" />
@@ -117,6 +117,7 @@ export default function ModernHero() {
               </Button>
             )}
             
+            <a href="https://github.com/sobiswriter" target="_blank" rel="noopener noreferrer">
             <Button
               variant="outline"
               size="lg"
@@ -126,6 +127,7 @@ export default function ModernHero() {
               Explore Projects
               <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
+            </a>
 
             <Button
               variant="ghost"

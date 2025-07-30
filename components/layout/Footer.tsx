@@ -17,7 +17,7 @@ const footerLinks = {
     { name: 'Resources', href: '/resources' },
   ],
   community: [
-    { name: 'Join Team7', href: '/join' },
+    { name: 'Join Team7', href: 'https://forms.gle/D48UnxdF2vBzVxb3A' },
     { name: 'Member Directory', href: '/members' },
     { name: 'Achievements', href: '/achievements' },
     { name: 'Code of Conduct', href: '/code-of-conduct' },

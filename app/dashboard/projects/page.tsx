@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { getItems, deleteItem } from '@/lib/demoStore';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -16,26 +16,20 @@ interface ProjectItem {
 }
 
 export default function ProjectsList() {
-  const { user, loading } = useAuth();
+  
   const router = useRouter();
   const [projects, setProjects] = useState<ProjectItem[]>([]);
 
   useEffect(() => {
-    if (!loading) {
-      if (!user || user.role !== 'admin') {
-        router.push('/');
-      } else {
-        setProjects(getItems<ProjectItem>('projects'));
-      }
-    }
-  }, [loading, user, router]);
+    setProjects(getItems<ProjectItem>('projects'));
+  }, []);
 
   const remove = (id: string) => {
     deleteItem('projects', id);
     setProjects(getItems<ProjectItem>('projects'));
   };
 
-  if (loading || !user || user.role !== 'admin') return null;
+  
 
   return (
     <div className="min-h-screen pt-24 px-4 bg-team7-darkBg text-white">

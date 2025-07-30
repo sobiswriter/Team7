@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { getItems, deleteItem } from '@/lib/demoStore';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -18,26 +18,20 @@ interface AchievementItem {
 }
 
 export default function AchievementsList() {
-  const { user, loading } = useAuth();
+  
   const router = useRouter();
   const [achievements, setAchievements] = useState<AchievementItem[]>([]);
 
   useEffect(() => {
-    if (!loading) {
-      if (!user || user.role !== 'admin') {
-        router.push('/');
-      } else {
-        setAchievements(getItems<AchievementItem>('achievements'));
-      }
-    }
-  }, [loading, user, router]);
+    setAchievements(getItems<AchievementItem>('achievements'));
+  }, []);
 
   const remove = (id: string) => {
     deleteItem('achievements', id);
     setAchievements(getItems<AchievementItem>('achievements'));
   };
 
-  if (loading || !user || user.role !== 'admin') return null;
+  
 
   return (
     <div className="min-h-screen pt-24 px-4 bg-team7-darkBg text-white">

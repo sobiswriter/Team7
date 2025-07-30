@@ -170,6 +170,7 @@ export default function FeaturedProjects() {
 
         {/* View All Projects Button */}
         <div className="text-center">
+          <a href="/projects">
           <Button
             size="lg"
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 group"
@@ -179,6 +180,7 @@ export default function FeaturedProjects() {
               <ExternalLink className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
           </Button>
+          </a>
         </div>
       </div>
     </section>

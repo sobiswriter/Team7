@@ -1,6 +1,5 @@
 import './globals.css';
 import Header from '@/components/layout/Header';
-import { AuthProvider } from '@/contexts/AuthContext';
 import type { Metadata } from 'next';
 import { Inter, Poppins, Fira_Code } from 'next/font/google';
 import { Toaster } from '@/components/ui/sonner';
@@ -35,11 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${poppins.variable} ${firaCode.variable} font-inter bg-background text-foreground antialiased`}>
-        <AuthProvider>
           <Header />
         {children}
           <Toaster />
-        </AuthProvider>
       </body>
     </html>
   );

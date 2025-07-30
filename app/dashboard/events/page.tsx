@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { getItems, deleteItem } from '@/lib/demoStore';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -17,26 +17,20 @@ interface EventItem {
 }
 
 export default function EventsPage() {
-  const { user, loading } = useAuth();
+  
   const router = useRouter();
   const [events, setEvents] = useState<EventItem[]>([]);
 
   useEffect(() => {
-    if (!loading) {
-      if (!user || user.role !== 'admin') {
-        router.push('/');
-      } else {
-        setEvents(getItems<EventItem>('events'));
-      }
-    }
-  }, [loading, user, router]);
+    setEvents(getItems<EventItem>('events'));
+  }, []);
 
   const remove = (id: string) => {
     deleteItem('events', id);
     setEvents(getItems<EventItem>('events'));
   };
 
-  if (loading || !user || user.role !== 'admin') return null;
+  
 
   return (
     <div className="min-h-screen pt-24 px-4 bg-team7-darkBg text-white">

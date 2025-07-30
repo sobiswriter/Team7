@@ -233,6 +233,7 @@ export default function TechStack() {
               Let's create the future together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://forms.gle/D48UnxdF2vBzVxb3A" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
@@ -240,6 +241,8 @@ export default function TechStack() {
                 <Code className="mr-2 w-5 h-5" />
                 Start Building
               </Button>
+              </a>
+              <a href="https://forms.gle/D48UnxdF2vBzVxb3A" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 variant="outline"
@@ -247,6 +250,7 @@ export default function TechStack() {
               >
                 View Documentation
               </Button>
+              </a>
             </div>
           </div>
         </div>

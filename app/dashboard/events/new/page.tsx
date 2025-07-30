@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { v4 as uuid } from 'uuid';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { saveItem } from '@/lib/demoStore';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,7 +18,7 @@ const parseDocx = async (file: File): Promise<string> => {
 };
 
 export default function NewEvent() {
-  const { user, loading } = useAuth();
+  
   const router = useRouter();
 
   const [title, setTitle] = useState('');
@@ -27,11 +27,7 @@ export default function NewEvent() {
   const [description, setDescription] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  if (!loading && (!user || user.role !== 'admin')) {
-    router.push('/');
-    return null;
-  }
-  if (loading) return null;
+  
 
   const handleDocx = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

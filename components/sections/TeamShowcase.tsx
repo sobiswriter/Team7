@@ -259,12 +259,14 @@ export default function TeamShowcase() {
               to join our community and build the future together.
             </p>
           </div>
+          <a href="https://forms.gle/D48UnxdF2vBzVxb3A" target="_blank" rel="noopener noreferrer">
           <Button
             size="lg"
             className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             Join Team7 Today
           </Button>
+          </a>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Folder, Users, Calendar, BookOpen, Trophy } from 'lucide-react';
 
@@ -15,22 +15,12 @@ const stats = [
 ];
 
 export default function AdminDashboard() {
-  const { user, loading } = useAuth();
+  
   const router = useRouter();
 
-  useEffect(() => {
-    if (!loading) {
-      if (!user) {
-        router.push('/login');
-      } else if (user.role !== 'admin') {
-        router.push('/');
-      }
-    }
-  }, [user, loading, router]);
+  
 
-  if (loading || !user || user.role !== 'admin') {
-    return null; // or a loader
-  }
+  
 
   return (
     <div className="min-h-screen pt-24 px-4 bg-team7-darkBg">
