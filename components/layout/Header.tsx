@@ -42,7 +42,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <Image src={"/logo_7.jpg"} alt="Team7 Logo" width={32} height={32} className="w-8 h-8 rounded-lg object-cover" priority />
+            <Image src={"https://res.cloudinary.com/djrdtijtn/image/upload/v1753880986/logo_7_z39tbs.jpg"} alt="Team7 Logo" width={32} height={32} className="w-8 h-8 rounded-lg object-cover" priority />
             <span className="text-xl font-poppins font-bold bg-gradient-to-r from-team7-blue to-team7-magenta bg-clip-text text-transparent">
               Team7
             </span>
