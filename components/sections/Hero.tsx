@@ -120,7 +120,6 @@ export default function Hero() {
                 </Button>
               </a>
               </div>
-            )}
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-team7-green to-team7-blue rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
               <a 

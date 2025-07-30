@@ -115,7 +115,6 @@ export default function ModernHero() {
                   </span>
                 </a>
               </Button>
-            )}
             
             <a href="https://github.com/sobiswriter" target="_blank" rel="noopener noreferrer">
             <Button
