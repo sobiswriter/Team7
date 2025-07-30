@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, Terminal, Users, Folder, Calendar, BookOpen, Trophy } from 'lucide-react';
 
 import Image from 'next/image';
-import logo7 from '@/logo_7.jpg';
+
 
 const navigation = [
   { name: 'Home', href: '/', icon: Terminal },
@@ -42,7 +42,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <Image src={"/Team7/logo_7.jpg"} alt="Team7 Logo" width={32} height={32} className="w-8 h-8 rounded-lg object-cover" priority />
+            <Image src={"/logo_7.jpg"} alt="Team7 Logo" width={32} height={32} className="w-8 h-8 rounded-lg object-cover" priority />
             <span className="text-xl font-poppins font-bold bg-gradient-to-r from-team7-blue to-team7-magenta bg-clip-text text-transparent">
               Team7
             </span>
