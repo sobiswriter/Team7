@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/Team7',
   output: 'export',
   optimizeFonts: false,
   eslint: {
